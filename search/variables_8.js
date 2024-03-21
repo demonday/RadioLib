@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['moduleserial_637',['ModuleSerial',['../class_module.html#a99556decb983f682b98220ae5434b004',1,'Module']]]
+  ['joinrequestdatarate_956',['joinRequestDataRate',['../struct_lo_ra_w_a_n_channel_span__t.html#a09bbd5a4bc1f458769f0d28bdeb4a502',1,'LoRaWANChannelSpan_t']]]
 ];

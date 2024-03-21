@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['variablepacketlengthmode_621',['variablePacketLengthMode',['../class_c_c1101.html#a881122ec3457c5f95760859f8e0297c7',1,'CC1101::variablePacketLengthMode()'],['../class_r_f69.html#af62ebde1ea34a394b9781a21ae348c39',1,'RF69::variablePacketLengthMode()'],['../class_s_x126x.html#aa11ab2c6f4488daf2ece93288e05c504',1,'SX126x::variablePacketLengthMode()'],['../class_s_x127x.html#a9f753c0857e7b8b4b9f7f6e91c77f0fd',1,'SX127x::variablePacketLengthMode()']]]
+  ['waitformicroseconds_913',['waitForMicroseconds',['../class_module.html#a47978200f7e2e408fb64f506c81cee9f',1,'Module']]],
+  ['wipe_914',['wipe',['../class_lo_ra_w_a_n_node.html#a9613998d071bcf401be9ad57ff8591ea',1,'LoRaWANNode']]],
+  ['write_915',['write',['../class_bell_client.html#aa2874910006a927d07d865e69cfe5c65',1,'BellClient::write()'],['../class_f_s_k4_client.html#aa59fb42d3eeafe5ab3f0437ef5567ec2',1,'FSK4Client::write(uint8_t *buff, size_t len)'],['../class_f_s_k4_client.html#a31218736d4f9a3412ee9009a4c4f5a22',1,'FSK4Client::write(uint8_t b)'],['../class_hell_client.html#a5c5117dadbe33da1cda5fd4981b405eb',1,'HellClient::write()'],['../class_morse_client.html#abd37869212f3338eb7c95c6f16dadbba',1,'MorseClient::write()'],['../class_r_t_t_y_client.html#a077a21423deee0393cead0b3a239691f',1,'RTTYClient::write()']]]
 ];
