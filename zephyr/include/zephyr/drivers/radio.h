@@ -10,6 +10,7 @@ struct radio_device_config {
   struct spi_dt_spec bus;
   struct gpio_dt_spec reset;
   struct gpio_dt_spec cs;
+  struct gpio_dt_spec busy;
   uint8_t dio_count;
   struct gpio_dt_spec dios[];
 };
@@ -38,8 +39,8 @@ typedef int (*radio_dev_config)(const struct device *dev,
 typedef int (*radio_dev_configure_pin)(const struct device *dev, uint32_t pin,
                                        uint32_t mode);
 
-typedef int (*radio_dev_spi_transceive)(const struct device *dev, uint8_t reg,
-                                        bool write, void *data, size_t length);
+typedef int (*radio_dev_spi_transceive)(const struct device *dev, uint8_t *out,
+                                        bool write, uint8_t *in, size_t length);
 
 typedef int (*radio_dev_gpio_read)(const struct device *dev, uint32_t pin);
 typedef int (*radio_dev_gpio_write)(const struct device *dev, uint32_t pin,
@@ -89,15 +90,15 @@ static inline int radio_configure_pin(const struct device *dev, uint32_t pin,
   return api->configure_pin(dev, pin, mode);
 }
 
-static inline int radio_transceive(const struct device *dev, uint8_t reg,
-                                   bool write, void *data, size_t length) {
+static inline int radio_transceive(const struct device *dev, uint8_t *out,
+                                   bool write, uint8_t *in, size_t length) {
   const struct radio_device_api *api =
       (const struct radio_device_api *)dev->api;
 
   if (api->transceive == NULL) {
     return -ENOSYS;
   }
-  return api->transceive(dev, reg, write, data, length);
+  return api->transceive(dev, out, write, in, length);
 }
 
 static inline int radio_gpio_read(const struct device *dev, uint32_t pin) {

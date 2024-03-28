@@ -22,7 +22,7 @@ ModulePins ZephyrModule::getPins(ZephyrHal* hal) {
   pins pins_hal = hal->getPins();
 
   ModulePins pins_module;
-  pins_module.cs = pins_hal.cs;
+  pins_module.cs = RADIOLIB_NC;  // TODO deal with RADIOLIB NC
   pins_module.rst = pins_hal.reset;
   pins_module.irq = pins_hal.dio[0];
   pins_module.gpio = pins_hal.dio[1];

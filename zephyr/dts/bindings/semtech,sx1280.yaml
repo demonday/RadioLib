@@ -1,0 +1,76 @@
+compatible: "semtech,sx1280"
+
+include: spi-device.yaml
+
+description: |
+  module
+
+properties:
+  reset-gpio:
+    type: phandle
+    required: false
+    description: |
+      GPIO connected to the modem's RESET/NRESET signal.
+      This signal is open-drain, active-high (SX1272/3) or
+      active-low (SX1276/8/XZ9) as interpreted by the modem.
+
+  busy-gpio:
+    type: phandle
+    required: false
+    description: |
+      Up to 5 pins that produce service interrupts from the modem.
+      These signals are normally active-high.
+
+  dio-gpios:
+    type: phandle-array
+    required: false
+    description: |
+      Up to 5 pins that produce service interrupts from the modem.
+      These signals are normally active-high.
+
+  # power-amplifier-output:
+  #   required: false
+  #   type: string
+  #   description: |
+  #     Selects power amplifier output pin. This is required when neither
+  #     'rfo-enable-gpios' nor 'pa-boost-enable-gpios' is specified. In other
+  #     case this property is simply ignored.
+  #   enum:
+  #     - "rfo"
+  #     - "pa-boost"
+
+  # antenna-enable-gpios:
+  #   required: false
+  #   type: phandle-array
+  #   description: |
+  #     Antenna power enable pin.
+
+  # rfi-enable-gpios:
+  #   required: false
+  #   type: phandle-array
+  #   description: |
+  #     RFI antenna input enable pin.
+
+  # rfo-enable-gpios:
+  #   required: false
+  #   type: phandle-array
+  #   description: |
+  #     RFO antenna output enable pin.
+
+  # pa-boost-enable-gpios:
+  #   required: false
+  #   type: phandle-array
+  #   description: |
+  #     PA_BOOST antenna output enable pin.
+
+  # tcxo-power-gpios:
+  #   required: false
+  #   type: phandle-array
+  #   description: |
+  #     TCXO power enable pin.
+
+  # tcxo-power-startup-delay-ms:
+  #   required: false
+  #   type: int
+  #   description: |
+  #     Delay which has to be applied after enabling TCXO power.
